@@ -1,0 +1,1 @@
+web: gunicorn efs.wsgi --log-file - --log-level debug
