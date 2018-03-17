@@ -4,7 +4,7 @@
 <form method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger" value="Delete">
-    <a href="{% url 'home' pk=investment.cust_number %} ">Cancel</a>
+    <a href="{% url 'efs_app:home' pk=investment.cust_number %} ">Cancel</a>
 
 </form>
 

@@ -17,6 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from efs_app.views import IndexPage
 from . import views
+app_name = 'efs_app'
+
 urlpatterns = [
     url(r'^$', IndexPage, name="home"),
     # url(r'^$', views.home, name='home'),
