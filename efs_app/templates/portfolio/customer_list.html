@@ -1,0 +1,68 @@
+{% extends 'portfolio/base.html' %} {% block content %}
+
+<body>
+    <style>
+        body {
+            background-color: beige;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <h3 class="panel-heading">Welcome!</h3>
+                    <p class="panel-body">
+                        Eagle Financial Services, your Midwest Financial Services Partner.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2 style="padding-left: 15Px">Customer Information</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered table-hover table-responsive">
+            <thead>
+                <tr class="bg-info">
+                    <th>Customer Number</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Primary Email</th>
+                    <th>Cell Phone</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.cust_number }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>{{ customer.city }}</td>
+                    <td>{{ customer.state }}</td>
+                    <td>{{ customer.zipcode }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.cell_phone }}</td>
+                    <td><a href="{% url 'customer_edit' pk=customer.pk %}" class="btn btn-warning">Edit</a>
+                        <td><a href="{% url 'customer_delete' pk=customer.pk %}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger">Delete</a>
+                        </td>
+                        <td><a href="{% url 'portfolio' pk=customer.pk %}" class="btn btn-primary">Portfolio</a>
+                        </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% comment %} {#
+        <div class="row">#} {#
+            <a href="{% url 'customer_new' %}" class="row">
+                <span#} {# class="btn btn-primary">Add Customer</span>
+            </a>#} {# </div>#} {% endcomment %}
+    </div>
+</body>
+
+</html>
+{% endblock %}

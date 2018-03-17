@@ -1,0 +1,110 @@
+{% extends "base.html" %} {% block content %}
+<!-- Page Heading -->
+<h3 class="my-4">Hi Lorem!<br/>
+    <small>Choose from below your preffered service</small>
+</h3>
+
+<div class="row">
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://onlinemastery.co.uk/wp-content/uploads/2016/02/avatar-1.jpg" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    Customer
+                </h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <div> {% if user.is_authenticated %}
+                    <a class="btn btn-primary btn-block" href="{% url 'customer_list' %}" role="button">View
+                            details &raquo;</a> {% endif %}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_VfYWU2bTMNBmhSSz2jQ2PyCa77JGvl50a1M8eT-KDpMeIK43Q" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    Investment
+                </h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <div> {% if user.is_authenticated %}
+                    <a class="btn btn-primary btn-block" href="{% url 'investment_list' %}" role="button">View
+                            details &raquo;</a> {% endif %}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2012/11/09/100110256-stocks_portfolio.530x298.jpg?v=1363716376" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    Stocks Portfolio
+                </h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <div> {% if user.is_authenticated %}
+                    <a class="btn btn-primary btn-block" href="{% url 'stock_list' %}" role="button">View
+                            details &raquo;</a> {% endif %}</div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="#">Project Four</a>
+                </h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="#">Project Five</a>
+                </h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="#">Project Six</a>
+                </h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+            </div>
+        </div>
+    </div> -->
+</div>
+<!-- /.row -->
+
+<!-- Pagination -->
+<!-- <ul class="pagination justify-content-center">
+    <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+        </a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+        </a>
+    </li>
+</ul> -->
+{% endblock %}
