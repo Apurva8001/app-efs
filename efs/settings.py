@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'efs_app',
     'rest_framework',
-    'mathfilters'
+    'mathfilters',
+    'django.contrib.humanize'
+
 ]
 
 MIDDLEWARE = [
