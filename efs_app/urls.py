@@ -37,6 +37,9 @@ urlpatterns = [
     url(r'^investment/(?P<pk>\d+)/delete/$', views.investment_delete, name='investment_delete'),
     url(r'^investment/(?P<pk>\d+)/edit/$', views.investment_edit, name='investment_edit'),
     url(r'^investment/create/$', views.investment_new, name='investment_new'),
-    url(r'^customers_json/', views.CustomerList.as_view()),
+    url(r'^customers_json/', views.CustomerList.as_view(), name='customers_json'),
+    url(r'^stocks_json/', views.StockList.as_view(), name='stocks_json'),
+    url(r'^investments_json/', views.InvestmentList.as_view(), name='investments_json'),
+    url(r'^(?P<pk>\d+)/investments_json/', views.InvestmentListAndStock.as_view(), name='investments_jsonpk'),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

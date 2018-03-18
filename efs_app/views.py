@@ -9,10 +9,9 @@ from django.urls import reverse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import CustomerSerializer
+from .serializers import CustomerSerializer, StockSerializer, InvestmentSerializer,CombinedSerializer
 
 
-# Create your views here.
 
 def IndexPage(request):
     template_name = "portfolio/index.html"
@@ -194,3 +193,37 @@ class CustomerList(APIView):
         customers_json = Customer.objects.all()
         serializer = CustomerSerializer(customers_json, many=True)
         return Response(serializer.data)
+
+# List at the end of the views.py
+# Lists all Stock 
+class StockList(APIView):
+    
+    def get(self,request):
+        stocks_json = Stock.objects.all()
+        serializer = StockSerializer(stocks_json, many=True)
+        return Response(serializer.data)
+
+# List at the end of the views.py
+# Lists all investment 
+class InvestmentList(APIView):
+    
+    def get(self,request):
+        investments_json = Investment.objects.all()
+        serializer = InvestmentSerializer(investments_json, many=True)
+        return Response(serializer.data)
+
+from collections import namedtuple
+class InvestmentListAndStock(APIView):
+    
+    def get(self,request, pk):
+        Timeline = namedtuple('Timeline', ('investment', 'stock'))
+        timeline = Timeline(
+        investment = Investment.objects.filter(customer_id=pk),
+        stock = Stock.objects.filter(customer_id=pk),
+        )
+        # serializerstk = StockSerializer(stocks_json, many=True)
+        # serializerinvt = InvestmentSerializer(investments_json, many=True)
+        # combined = (investments_json, stocks_json)
+        serializer = CombinedSerializer(timeline)
+        return Response(serializer.data)
+
